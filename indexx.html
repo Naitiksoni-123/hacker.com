@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Your System is Hacked 😈</title>
+<style>
+  body {
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 60px;
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+    animation: flicker 1s infinite alternate;
+  }
+  @keyframes flicker {
+    0% {opacity:1;}
+    50% {opacity:0.4;}
+    100% {opacity:1;}
+  }
+  #subText {
+    margin-top: 20px;
+    font-size: 24px;
+    color: red;
+    animation: blink 0.5s infinite;
+  }
+  @keyframes blink {
+    0%, 50%, 100% {opacity:1;}
+    25%, 75% {opacity:0;}
+  }
+</style>
+</head>
+<body>
+  <h1 id="mainText">⚠️ Your System is Hacked ⚠️</h1>
+  <div id="subText">Critical breach detected! Initiating lockdown...</div>
+
+  <audio id="alarm" autoplay loop>
+    <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+  </audio>
+
+<script>
+  // Automatic reveal after countdown
+  setTimeout(function(){
+    document.getElementById('mainText').textContent = "😎 Ha ha! Nothing happened. This is a harmless prank!";
+    document.getElementById('subText').textContent = "Enjoy the prank safely!";
+    document.body.style.color = "#39ff14";
+    const alarm = document.getElementById('alarm');
+    alarm.pause();
+  }, 8000); // 8 seconds countdown
+</script>
+</body>
+</html>
